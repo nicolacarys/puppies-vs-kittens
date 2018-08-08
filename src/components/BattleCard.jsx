@@ -37,7 +37,7 @@ export default ({ kittens, puppies, kitten, puppy, getContender, runBattle }) =>
 			<Button 
 				clickEvent={ getContender }
 				classes="button button-random"
-				buttonText="Give me a random kitten and puppy!"
+				buttonText="Get my contenders!"
 			/>
 
 			<Button 

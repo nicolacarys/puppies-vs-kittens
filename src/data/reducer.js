@@ -7,17 +7,16 @@ import {
 	RESET_BATTLE
 } from "./actions";
 
-const generateKitten = (state) => Math.floor(Math.random() * state.get("kittens").count());
-
-const generatePuppy = (state) => Math.floor(Math.random() * state.get("puppies").count());
-
 const generateContenders = (state) => {
-	return state.set(["kitten", generateKitten(state)], ["puppy", generatePuppy(state)]);
-}
+	let kitten = Math.floor(Math.random() * state.getIn([ "kittens", "players" ]).count());
+	let puppy = Math.floor(Math.random() * state.getIn([ "puppies", "players" ]).count());
 
-const updateBattle = (state) => {
-	return state.get("battled") ? state.set("battled", false) : state.set("battled", true); 
-}
+	return state.set("kitten", kitten).set("puppy", puppy);
+};
+
+const updateBattle = (state) => (
+	state.get("battled") ? state.set("battled", false) : state.set("battled", true)
+);
 
 const updateWinner = (state) => {
 	let number = Math.floor(Math.random() * 100);
@@ -35,11 +34,11 @@ const updateWinner = (state) => {
 		return state.set("winner", "friendship");
 	
 	}
-}
+};
 
 const resetBattle = (state) => (
 	state.set("battled", false).set("winner", "").set("kitten", 0).set("puppy", 0)
-)
+);
 
 export default (state = initial, action) => {
   switch (action.type) {
