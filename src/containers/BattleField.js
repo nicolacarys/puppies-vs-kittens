@@ -15,6 +15,8 @@ const mapStateToProps = state => ({
 	puppy: state.get("puppy"),
 	battled: state.get("battled"),
 	winner: state.get("winner"),
+	kittenVic: state.get("kittenVic"),
+	puppyVic: state.get("puppyVic"),
 });
 
 const mapDispatchToProps = dispatch => ({

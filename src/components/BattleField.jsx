@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import BattleCounter from './BattleCounter';
 import BattleCard from './BattleCard';
 import Result from './Result';
 
@@ -61,6 +62,10 @@ class BattleField extends Component {
 	render() {
 		return (
 			<Wrapper>
+				<BattleCounter 
+					kittenVic={ this.props.kittenVic }
+					puppyVic={ this.props.puppyVic }
+				/>
 				{ !this.props.battled
 					?	<BattleCard 
 							kittens={ this.props.kittens }

@@ -22,10 +22,10 @@ const updateWinner = (state) => {
 	let number = Math.floor(Math.random() * 100);
 
 	if (number <= 25) {
-		return state.set("winner", "kitten");
+		return state.set("winner", "kitten").update("kittenVic", victory => victory + 1);
 	
 	} else if (number > 25 && number <= 50) {
-		return state.set("winner", "puppy");
+		return state.set("winner", "puppy").update("puppyVic", victory => victory + 1);
 	
 	} else if (number > 50 && number <= 75) {
 		return state.set("winner", "death");
