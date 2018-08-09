@@ -25,3 +25,10 @@ export const resetBattle = (value) => ({
   type: RESET_BATTLE,
   value,
 });
+
+export const RESET_COUNTER = Symbol("RESET_COUNTER");
+
+export const resetCounter = (value) => ({
+  type: RESET_COUNTER,
+  value,
+});

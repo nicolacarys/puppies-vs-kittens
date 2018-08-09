@@ -4,6 +4,7 @@ import {
 	updateBattle,
 	updateWinner,
 	resetBattle,
+	resetCounter,
 } from "../data/actions";
 
 import BattleField from "../components/BattleField";
@@ -24,6 +25,7 @@ const mapDispatchToProps = dispatch => ({
 	updateBattle: () => dispatch(updateBattle()),
 	updateWinner: () => dispatch(updateWinner()),
 	resetBattle: () => dispatch(resetBattle()),
+	resetCounter: () => dispatch(resetCounter()),
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(BattleField);

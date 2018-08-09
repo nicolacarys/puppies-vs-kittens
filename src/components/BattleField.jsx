@@ -74,6 +74,7 @@ class BattleField extends Component {
 							puppy={ this.props.puppy }
 							getContender={ this.props.getContender }
 							runBattle={ this.battle }
+							resetCounter={ this.props.resetCounter }
 						/>
 					: this.renderResult(this.props.winner)
 				}

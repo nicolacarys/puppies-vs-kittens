@@ -18,10 +18,9 @@ const Button = styled.button `
 	}
 `;
 
-export default ({ clickEvent, classes, buttonText, battled }) => (
+export default ({ clickEvent, buttonText, battled }) => (
 	<Button 
 		onClick={ () => clickEvent() } 
-		className={ classes }
 		battled={ battled}>
 		{ buttonText }
 	</Button>

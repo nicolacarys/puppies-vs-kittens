@@ -16,7 +16,7 @@ const ButtonSection = styled.div `
 	text-align: center;
 `;
 
-export default ({ kittens, puppies, kitten, puppy, getContender, runBattle }) => (
+export default ({ kittens, puppies, kitten, puppy, getContender, runBattle, resetCounter }) => (
 
 	<div className="wrapper">
 
@@ -50,13 +50,16 @@ export default ({ kittens, puppies, kitten, puppy, getContender, runBattle }) =>
 		<ButtonSection className="button-section">
 			<Button 
 				clickEvent={ getContender }
-				classes="button button-random"
 				buttonText="Get my contenders!"
+			/>
+
+			<Button
+				clickEvent={ resetCounter }
+				buttonText="Reset counter"
 			/>
 
 			<Button 
 				clickEvent={ runBattle }
-				classes="button button-battle"
 				buttonText="Battle!"
 			/>
 		</ButtonSection>

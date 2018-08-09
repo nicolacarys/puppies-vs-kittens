@@ -4,7 +4,8 @@ import {
 	GENERATE_CONTENDERS,
 	UPDATE_BATTLE,
 	UPDATE_WINNER,
-	RESET_BATTLE
+	RESET_BATTLE,
+	RESET_COUNTER,
 } from "./actions";
 
 const generateContenders = (state) => {
@@ -40,12 +41,15 @@ const resetBattle = (state) => (
 	state.set("battled", false).set("winner", "").set("kitten", 0).set("puppy", 0)
 );
 
+const resetCounter = (state) => state.set("kittenVic", 0).set("puppyVic", 0);
+
 export default (state = initial, action) => {
   switch (action.type) {
 		case GENERATE_CONTENDERS: return generateContenders(state, action);
 		case UPDATE_BATTLE: return updateBattle(state, action);
 		case UPDATE_WINNER: return updateWinner(state, action);
 		case RESET_BATTLE: return resetBattle(state, action);
+		case RESET_COUNTER: return resetCounter(state, action);
     default: return state;
   }
 };
