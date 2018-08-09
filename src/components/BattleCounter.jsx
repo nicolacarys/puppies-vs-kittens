@@ -28,15 +28,15 @@ export default ({ kittenVic, puppyVic }) => (
 		<h3>Battle Counter</h3>
 
 		<Table>
-			<tr>
+			<thead>
 				<td>Kitten</td>
 				<td>Puppy</td>
-			</tr>
+			</thead>
 
-			<tr>
+			<tbody>
 				<td>{ kittenVic }</td>
 				<td>{ puppyVic }</td>
-			</tr>
+			</tbody>
 		</Table>
 
 	</CounterContainer>
